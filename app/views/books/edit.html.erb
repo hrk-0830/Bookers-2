@@ -1,7 +1,18 @@
 <div class ="container">
-  <div class ="row text-center">
+  <div class ="row text-left">
     <div class ="col-sm-12 col-md-8 mx-auto">
       <h1>Editing Book</h1>
+      <div class ="error_explanation">
+        <!--エラー文-->
+        <% if @book.errors.any? %>
+          <%= @book.errors.count %>errors prohibited this obj from being saved:
+          <ul>
+            <% @book.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        <% end %>
+      </div>
         <%= form_with model: @book do |f| %>
         <div class ="form-group">
           <label for=inputtitle>Title</label> </br>

@@ -1,4 +1,5 @@
 <div class ="container px-5 px-sm-0">
+
   <div class="row">
     <%= render 'sidebar', book: @books, user: @user%>
     <div class ="col-md-8">
@@ -20,7 +21,7 @@
             <%= link_to "Edit", edit_book_path(@book), class: "btn btn-secondary" %>
           </th>
           <th>
-              <%= link_to "Destroy", book_path(@book), method: :delete, class: "btn btn-secondary" %>
+              <%= link_to "Destroy", book_path(@book), method: :delete,"data-confirm" => "本当に削除しますか？", class: "btn btn-secondary" %>
           </th>
           <% end %>
         </tr>
