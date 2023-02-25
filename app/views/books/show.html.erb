@@ -1,17 +1,17 @@
 <div class ="container px-5 px-sm-0">
 
   <div class="row">
-    <%= render 'sidebar', book: @books, user: @user%>
-    <div class ="col-md-8">
+    <%= render 'sidebar', book: @books, user: @users%>
+    <div class ="col-md-8 offset-md-1">
       <h2>Book detail</h2>
       <table class ="table">
         <tr>
           <th>
-            <%= image_tag @users.get_profile_image %> </br>
+            <a href="/users/<%= @users.id %>"><%= image_tag @users.get_profile_image %> </a></br>
             <a href="/users/<%= @users.id %>"><%= @users.name %></a>
           </th>
           <th>
-            <a href="/books/<%= @book %>"><%= @book.title %></a>
+            <a href="/books/<%=@book.id%>"><%= @book.title %></a>
           </th>
           <th>
             <%= @book.body %>

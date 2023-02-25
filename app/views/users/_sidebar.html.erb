@@ -14,7 +14,9 @@
         </tr>
       </table>
       <div class ="row">
-        <%= link_to "prof ed", edit_user_path(user.id), class: "btn btn-secondary" %>
+        <a class="btn btn-outline-secondary btn-block" href ="/users/<%= user.id %>/edit">
+          <i class="fas fa-user-cog"></i>
+        </a>
       </div>
       <!--ここから投稿フォーム-->
       <h2>New book</h2>
